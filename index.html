@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapel Web Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Chapel Web Solutions</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#demos">Demo Sites</a></li>
+                <li><a href="#rates">Rates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">Menu</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Website Solutions for Brethren Assemblies</h1>
+                <p>Simple, dignified, and low cost web presence for your chapel.</p>
+                <a href="#contact" class="cta-btn">Get Started</a>
+            </div>
+            <div class="hero-image">
+                <svg class="hero-cross" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer glow/halo effect -->
+                    <defs>
+                        <linearGradient id="crossGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#8B7355"/>
+                            <stop offset="50%" stop-color="#6B5344"/>
+                            <stop offset="100%" stop-color="#4A3728"/>
+                        </linearGradient>
+                        <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <!-- Light rays behind cross -->
+                    <g opacity="0.3">
+                        <line x1="100" y1="120" x2="100" y2="0" stroke="#D4A574" stroke-width="2"/>
+                        <line x1="100" y1="120" x2="180" y2="40" stroke="#D4A574" stroke-width="2"/>
+                        <line x1="100" y1="120" x2="200" y2="120" stroke="#D4A574" stroke-width="2"/>
+                        <line x1="100" y1="120" x2="180" y2="200" stroke="#D4A574" stroke-width="2"/>
+                        <line x1="100" y1="120" x2="20" y2="200" stroke="#D4A574" stroke-width="2"/>
+                        <line x1="100" y1="120" x2="0" y2="120" stroke="#D4A574" stroke-width="2"/>
+                        <line x1="100" y1="120" x2="20" y2="40" stroke="#D4A574" stroke-width="2"/>
+                    </g>
+                    <!-- Main cross shape -->
+                    <g filter="url(#softGlow)">
+                        <!-- Vertical beam -->
+                        <rect x="80" y="20" width="40" height="200" rx="4" fill="url(#crossGradient)"/>
+                        <!-- Horizontal beam -->
+                        <rect x="30" y="60" width="140" height="36" rx="4" fill="url(#crossGradient)"/>
+                        <!-- Wood grain details -->
+                        <line x1="90" y1="25" x2="90" y2="215" stroke="#3D2817" stroke-width="1" opacity="0.3"/>
+                        <line x1="110" y1="25" x2="110" y2="215" stroke="#3D2817" stroke-width="1" opacity="0.3"/>
+                        <line x1="35" y1="75" x2="165" y2="75" stroke="#3D2817" stroke-width="1" opacity="0.3"/>
+                        <!-- Subtle highlights -->
+                        <rect x="82" y="22" width="4" height="196" rx="2" fill="#A08060" opacity="0.4"/>
+                        <rect x="32" y="62" width="136" height="4" rx="2" fill="#A08060" opacity="0.4"/>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="photos/pinecrest_family 2.jpg" alt="Ted and his family">
+                </div>
+                <div class="about-text">
+                    <p>Ted grew up in St. Louis, Missouri, attending Maplewood Bible Chapel and Fenton Crossing Bible Chapel. He now lives in Hillsboro, Missouri with his wife Lydia and their three children. For the past ten years, he has been part of Bethel Community Church, where he has served as a deacon for the last six years.</p>
+                    <p>Ted teaches regularly at Bethel as well as Bible camps including Turkey Hill, Dayspring, and Storybook Lodge. By day, he works as a full-time software developer. Building websites for chapels is his evenings and weekends project—a way to serve assemblies with the skills God has given him.</p>
+                    <p class="scripture-verse">"Grab hold of that which is truly life." — 1 Timothy 6:19</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Artsy: Paintbrush and palette -->
+                        <circle cx="32" cy="36" r="20" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                        <circle cx="24" cy="32" r="3" fill="currentColor"/>
+                        <circle cx="32" cy="42" r="3" fill="currentColor"/>
+                        <circle cx="40" cy="36" r="3" fill="currentColor"/>
+                        <circle cx="28" cy="26" r="2.5" fill="currentColor"/>
+                        <path d="M44 20L52 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 8C54 6 57 6 58 8C59 10 58 12 56 13L52 8Z" fill="currentColor"/>
+                    </svg>
+                    <h3>Website Design</h3>
+                    <p>Sleek, modern design crafted to fit your chapel's vision. Bring your own Figma files, templates, or ideas—or let us create something fresh for you.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Hosting: Electrical outlet with plug -->
+                        <rect x="12" y="20" width="40" height="32" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                        <rect x="24" y="30" width="4" height="10" rx="1" fill="currentColor"/>
+                        <rect x="36" y="30" width="4" height="10" rx="1" fill="currentColor"/>
+                        <path d="M32 6V20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M26 6H38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <rect x="28" y="2" width="3" height="6" fill="currentColor"/>
+                        <rect x="33" y="2" width="3" height="6" fill="currentColor"/>
+                    </svg>
+                    <h3>Hosting Setup</h3>
+                    <p>We handle the technical details—deployment, DNS configuration, and domain registration—so your site goes live without the headache.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Simple hammer -->
+                        <rect x="29" y="24" width="6" height="32" rx="1" fill="currentColor"/>
+                        <rect x="16" y="8" width="32" height="14" rx="2" fill="currentColor"/>
+                    </svg>
+                    <h3>Maintenance</h3>
+                    <p>Ongoing support to keep your site running smoothly—updates, troubleshooting, and reliable uptime you can count on.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="demos">
+            <h2>Demo Sites</h2>
+            <p class="section-subtitle">Click to preview sample websites we can build for your chapel.</p>
+            <div class="portfolio-grid">
+                <a href="demos/classic.html" class="portfolio-item demo-link">
+                    <div class="demo-preview classic-preview">
+                        <span>Classic</span>
+                    </div>
+                    <h3>Classic & Traditional</h3>
+                    <p class="demo-description">Timeless, dignified design with elegant typography</p>
+                </a>
+                <a href="demos/modern.html" class="portfolio-item demo-link">
+                    <div class="demo-preview modern-preview">
+                        <span>Modern</span>
+                    </div>
+                    <h3>Modern & Clean</h3>
+                    <p class="demo-description">Contemporary design with bold visuals</p>
+                </a>
+                <a href="demos/community.html" class="portfolio-item demo-link">
+                    <div class="demo-preview community-preview">
+                        <span>Community</span>
+                    </div>
+                    <h3>Community Focused</h3>
+                    <p class="demo-description">Warm, inviting layout highlighting fellowship</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="rates">
+            <h2>Services</h2>
+            <div class="rates-grid">
+                <div class="rate-card">
+                    <h3>Build and Deploy</h3>
+                    <div class="price">$XXX</div>
+                    <ul>
+                        <li class="included">Build</li>
+                        <li class="included">Deploy to your domain</li>
+                        <li class="not-included">Maintenance</li>
+                        <li class="not-included">Troubleshooting</li>
+                        <li class="not-included">Managing DNS and ongoing deployment</li>
+                    </ul>
+                </div>
+                <div class="rate-card featured">
+                    <h3>Build and Maintain</h3>
+                    <div class="price">$XXX</div>
+                    <ul>
+                        <li class="included">Build</li>
+                        <li class="included">Deploy to your domain</li>
+                        <li class="included">Maintenance</li>
+                        <li class="included">Troubleshooting</li>
+                        <li class="included">Managing DNS and ongoing deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Chapel Name">
+                    <textarea placeholder="Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> tatcn8@gmail.com</p>
+                    <p><strong>Call or Text:</strong> (314) 698-6492</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chapel Web Solutions. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

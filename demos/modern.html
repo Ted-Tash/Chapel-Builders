@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornerstone Chapel - Modern Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --light: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+        }
+
+        /* Back to main site link */
+        .back-link {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            z-index: 1001;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            background: var(--primary);
+        }
+
+        /* Navigation */
+        header {
+            background: var(--white);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 8rem 2rem 4rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            color: var(--white);
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        .hero-image {
+            background: rgba(255,255,255,0.1);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        /* Times section */
+        .times-section {
+            background: var(--light);
+            max-width: none;
+            padding: 6rem 2rem;
+        }
+
+        .times-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .time-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .time-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .time-card .icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .time-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .time-card .time {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .feature h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: var(--primary);
+            color: var(--white);
+            max-width: none;
+            padding: 6rem 2rem;
+        }
+
+        .contact-section h2 {
+            color: var(--white);
+        }
+
+        .contact-section .subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #d63850;
+        }
+
+        .contact-info-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-info-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .times-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html#demos" class="back-link">&larr; Back to Chapel Web Solutions</a>
+
+    <header>
+        <nav>
+            <div class="logo">Corner<span>stone</span></div>
+            <ul class="nav-links">
+                <li><a href="#times">Times</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Welcome to <span>Cornerstone</span> Chapel</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover a community built on faith, hope, and love.</p>
+                <a href="#contact" class="btn">Plan Your Visit</a>
+            </div>
+            <div class="hero-image">
+                Chapel Photo
+            </div>
+        </div>
+    </section>
+
+    <section id="times" class="times-section">
+        <h2>Join Us This Week</h2>
+        <p class="subtitle">Everyone is welcome at our gatherings</p>
+        <div class="times-grid">
+            <div class="time-card">
+                <div class="icon">SUN</div>
+                <h3>Sunday Morning</h3>
+                <div class="time">9:30 AM</div>
+                <p>Breaking of Bread</p>
+            </div>
+            <div class="time-card">
+                <div class="icon">SUN</div>
+                <h3>Sunday Evening</h3>
+                <div class="time">6:00 PM</div>
+                <p>Gospel Service</p>
+            </div>
+            <div class="time-card">
+                <div class="icon">WED</div>
+                <h3>Midweek</h3>
+                <div class="time">7:30 PM</div>
+                <p>Bible Study & Prayer</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Our Chapel</h2>
+        <p class="subtitle">A community rooted in Scripture</p>
+        <div class="about-content">
+            <div class="about-image">
+                About Photo
+            </div>
+            <div class="about-text">
+                <h3>Our Mission</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>What to Expect</h2>
+        <p class="subtitle">When you visit us</p>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">1</div>
+                <h4>Warm Welcome</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">2</div>
+                <h4>Biblical Teaching</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">3</div>
+                <h4>Simple Worship</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">4</div>
+                <h4>Fellowship</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <p class="subtitle">We'd love to hear from you</p>
+        <div class="contact-grid">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <h4>Location</h4>
+                    <p>456 Faith Avenue<br>Somewhere, ST 67890</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>Phone</h4>
+                    <p>(555) 987-6543</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>Email</h4>
+                    <p>hello@cornerstonechapel.org</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Cornerstone Chapel. All rights reserved.</p>
+    </footer>
+</body>
+</html>

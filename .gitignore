@@ -1,0 +1,12 @@
+# Sensitive data
+chapel_contacts.csv
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
