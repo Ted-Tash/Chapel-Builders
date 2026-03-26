@@ -23,12 +23,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form handler (placeholder)
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Form submission placeholder - connect to backend later');
-        });
-    }
 });

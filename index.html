@@ -14,7 +14,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#demos">Demo Sites</a></li>
-                <li><a href="#rates">Rates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">Menu</button>
@@ -88,11 +87,105 @@
         </section>
 
         <section id="services">
+            <style>
+                #services {
+                    padding: 4rem 2rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                #services h2 {
+                    text-align: center;
+                    font-size: 2rem;
+                    color: #2c3e50;
+                    margin-bottom: 2rem;
+                }
+                .svc-what-we-do {
+                    display: flex;
+                    gap: 2rem;
+                    margin-bottom: 4rem;
+                }
+                .svc-what-we-do .svc-item {
+                    flex: 1;
+                    text-align: center;
+                    padding: 2rem;
+                    background: #ecf0f1;
+                }
+                .svc-what-we-do .svc-item h3 {
+                    color: #2c3e50;
+                    margin-bottom: 1rem;
+                }
+                .svc-what-we-do .svc-item svg {
+                    width: 64px;
+                    height: 64px;
+                    margin-bottom: 1rem;
+                    color: #3498db;
+                }
+                .svc-packages {
+                    display: flex;
+                    gap: 2rem;
+                    justify-content: center;
+                    margin-bottom: 2rem;
+                }
+                .svc-package {
+                    flex: 1;
+                    max-width: 400px;
+                    text-align: center;
+                    padding: 2rem;
+                    background: #ecf0f1;
+                    border: 2px solid transparent;
+                }
+                .svc-package.svc-featured {
+                    border-color: #3498db;
+                }
+                .svc-package h3 {
+                    color: #2c3e50;
+                    margin-bottom: 1rem;
+                }
+                .svc-package ul {
+                    list-style: none;
+                    text-align: left;
+                    padding: 0;
+                    margin: 0;
+                }
+                .svc-package li {
+                    padding: 0.5rem 0;
+                    border-bottom: 1px solid #ddd;
+                }
+                .svc-package li.included::before {
+                    content: "✓ ";
+                    color: #27ae60;
+                    font-weight: bold;
+                }
+                .svc-package li.not-included::before {
+                    content: "✗ ";
+                    color: #e74c3c;
+                    font-weight: bold;
+                }
+                .svc-package li.not-included {
+                    color: #999;
+                }
+                .svc-note {
+                    text-align: center;
+                    color: #34495e;
+                    font-style: italic;
+                }
+                @media (max-width: 768px) {
+                    .svc-what-we-do {
+                        flex-direction: column;
+                    }
+                    .svc-packages {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .svc-package {
+                        max-width: 100%;
+                    }
+                }
+            </style>
             <h2>Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Artsy: Paintbrush and palette -->
+            <div class="svc-what-we-do">
+                <div class="svc-item">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="32" cy="36" r="20" stroke="currentColor" stroke-width="2.5" fill="none"/>
                         <circle cx="24" cy="32" r="3" fill="currentColor"/>
                         <circle cx="32" cy="42" r="3" fill="currentColor"/>
@@ -104,9 +197,8 @@
                     <h3>Website Design</h3>
                     <p>Sleek, modern design crafted to fit your chapel's vision. Bring your own Figma files, templates, or ideas—or let us create something fresh for you.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Hosting: Electrical outlet with plug -->
+                <div class="svc-item">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="12" y="20" width="40" height="32" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
                         <rect x="24" y="30" width="4" height="10" rx="1" fill="currentColor"/>
                         <rect x="36" y="30" width="4" height="10" rx="1" fill="currentColor"/>
@@ -118,9 +210,8 @@
                     <h3>Hosting Setup</h3>
                     <p>We handle the technical details—deployment, DNS configuration, and domain registration—so your site goes live without the headache.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Simple hammer -->
+                <div class="svc-item">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="29" y="24" width="6" height="32" rx="1" fill="currentColor"/>
                         <rect x="16" y="8" width="32" height="14" rx="2" fill="currentColor"/>
                     </svg>
@@ -128,6 +219,31 @@
                     <p>Ongoing support to keep your site running smoothly—updates, troubleshooting, and reliable uptime you can count on.</p>
                 </div>
             </div>
+            <div class="svc-packages">
+                <div class="svc-package">
+                    <h3>Build and Deploy</h3>
+                    <ul>
+                        <li class="included">Design help</li>
+                        <li class="included">Build</li>
+                        <li class="included">Deploy to your domain</li>
+                        <li class="not-included">Maintenance</li>
+                        <li class="not-included">Troubleshooting</li>
+                        <li class="not-included">Managing DNS and ongoing deployment</li>
+                    </ul>
+                </div>
+                <div class="svc-package svc-featured">
+                    <h3>Build and Maintain</h3>
+                    <ul>
+                        <li class="included">Design help</li>
+                        <li class="included">Build</li>
+                        <li class="included">Deploy to your domain</li>
+                        <li class="included">Maintenance</li>
+                        <li class="included">Troubleshooting</li>
+                        <li class="included">Managing DNS and ongoing deployment</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="svc-note">Costs are estimated on a per-project basis.</p>
         </section>
 
         <section id="demos">
@@ -158,48 +274,12 @@
             </div>
         </section>
 
-        <section id="rates">
-            <h2>Services</h2>
-            <div class="rates-grid">
-                <div class="rate-card">
-                    <h3>Build and Deploy</h3>
-                    <div class="price">$XXX</div>
-                    <ul>
-                        <li class="included">Build</li>
-                        <li class="included">Deploy to your domain</li>
-                        <li class="not-included">Maintenance</li>
-                        <li class="not-included">Troubleshooting</li>
-                        <li class="not-included">Managing DNS and ongoing deployment</li>
-                    </ul>
-                </div>
-                <div class="rate-card featured">
-                    <h3>Build and Maintain</h3>
-                    <div class="price">$XXX</div>
-                    <ul>
-                        <li class="included">Build</li>
-                        <li class="included">Deploy to your domain</li>
-                        <li class="included">Maintenance</li>
-                        <li class="included">Troubleshooting</li>
-                        <li class="included">Managing DNS and ongoing deployment</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
         <section id="contact">
             <h2>Contact</h2>
-            <div class="contact-content">
-                <form class="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="text" placeholder="Chapel Name">
-                    <textarea placeholder="Message" rows="5" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-                <div class="contact-info">
-                    <p><strong>Email:</strong> tatcn8@gmail.com</p>
-                    <p><strong>Call or Text:</strong> (314) 698-6492</p>
-                </div>
+            <div class="contact-info-centered">
+                <p><strong>Call or Text:</strong> <a href="tel:3146986492">(314) 698-6492</a></p>
+                <p><strong>Email:</strong> <a href="mailto:tatcn8@gmail.com">tatcn8@gmail.com</a></p>
+                <p class="contact-note">I respond fastest to texts and emails and will try to get back to you within the day.</p>
             </div>
         </section>
     </main>
